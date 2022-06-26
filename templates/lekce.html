@@ -1,0 +1,23 @@
+{% extends 'zaklad.html' %} {% block content %} {% load socialaccount %} {% load static %}
+
+{% if user.is_authenticated %}
+
+<div id="seznam-lekci">
+    {% for jmeno in seznam_lekci %}
+    <a class="lekce-blok" href="/cvic/{{forloop.counter}}">
+        <p>Lekce {{jmeno}}</p>
+        {% if forloop.counter in dokonceny %}
+        <img class="fajvka"src="{% static 'icony/fajvka.png' %}" alt="Completed">
+        {% else %}
+        <img class="fajvka"src="{% static 'icony/krizek.png' %}" alt="Completed">
+        {% endif %}
+    </a>
+    {% endfor %}
+</div>
+
+
+{% else %}
+<p>Pro zobrazení lekcí se prvně přihlaš!</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap');
+
+:root {
+    --cerna: #0E0B16;
+    --modra: #4717F6;
+    --bila: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    color: var(--bila);
+    background-color: var(--cerna);
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding-right: 20px;
+}
+
+#kontent {
+    padding-top: 20px
+}
+
+.fajvka {
+    padding: 10px;
+    height: 60px;
+    width: 60px;
+}
+
+#seznam-lekci {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#seznam-lekci a {
+    background-color: var(--bila);
+    color: var(--cerna);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    min-width: 150px;
+}
+
+#seznam-lekci a p {
+    padding: 20px 0;
+}
+
+.lekce-blok {
+    background-color: var(--cerna);
+}
+
+.menu {
+    width: 240px;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+#line {
+    position: absolute;
+    border-right: 1px solid #260c85;
+    height: 98vh;
+    top: 1vh;
+    left: 240px;
+}
+
+.menu a,
+.google {
+    color: var(--seda);
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.google {
+    line-height: 20px;
+    width: 240px;
+    border: none;
+    background-color: var(--cerna);
+    text-align: center;
+}
+
+#google-logo {
+    width: 20px;
+    vertical-align: middle;
+}
+
+.menu a:hover,
+.google:hover {
+    color: var(--bila);
+}
+
+.menu a.active,
+.google:active {
+    color: var(--modra);
+}
+
+#text {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: normal;
+}
+
+.slovo {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.pismena {
+    border-radius: 3px;
+    display: block;
+    display: inline-flex;
+    font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+    font-size: 25px;
+    line-height: 1.5;
+    text-decoration: none;
+    padding-left: 2px;
+}
+
+.podtrzenePismeno {
+    border-bottom: 3px solid var(--bila);
+}
+
+.spatnePismeno {
+    background-color: red;
+}
+
+.opravenePismeno {
+    border-radius: 3px;
+    background-color: gray;
+}

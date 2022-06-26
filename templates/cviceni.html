@@ -1,0 +1,31 @@
+{% extends 'zaklad.html' %} {% block content %} {% load socialaccount %} {% load static %}
+
+
+{% if pismena in seznam_lekci_list %}
+<h1>Lekce {{jmeno}}</h1>
+
+<div id="text" data-length="{{ delka }}">
+    <div class="slovo">
+        {% for p in text %}
+
+        {% if p == " " %}
+        <p class="pismena" id="p{{ forloop.counter0 }}">&nbsp</p> <!-- prazdný znak -->
+    </div>
+    <div class="slovo">
+        {% else %}
+
+        {% if forloop.counter0 == 0 %}
+        <p class="pismena podtrzenePismeno" id="p{{ forloop.counter0 }}">{{p}}</p>
+        {% else %}
+        <p class="pismena" id="p{{ forloop.counter0 }}">{{p}}</p>
+        {% endif %}
+        {% endif %}
+
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <h1>bruh 404</h1>
+    {% endif %}
+<script src="{% static 'script.js' %}" pismena="{{pismena}}""></script>
+    {% endblock %}
